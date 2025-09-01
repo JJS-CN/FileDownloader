@@ -80,7 +80,7 @@ public class FileDownloadService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         handler.onStartCommand(intent, flags, startId);
         inspectRunServiceForeground(intent);
-        return START_STICKY;
+        return START_NOT_STICKY;
     }
 
     private void inspectRunServiceForeground(Intent intent) {

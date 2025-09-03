@@ -16,6 +16,8 @@
 
 package com.liulishuo.filedownloader.util;
 
+import static com.liulishuo.filedownloader.model.FileDownloadModel.TOTAL_VALUE_IN_CHUNKED_RESOURCE;
+
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -27,7 +29,6 @@ import android.os.PowerManager;
 import android.os.StatFs;
 import android.text.TextUtils;
 
-import com.liulishuo.filedownloader.BuildConfig;
 import com.liulishuo.filedownloader.connection.FileDownloadConnection;
 import com.liulishuo.filedownloader.download.CustomComponentHolder;
 import com.liulishuo.filedownloader.exception.FileDownloadGiveUpRetryException;
@@ -49,8 +50,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import static com.liulishuo.filedownloader.model.FileDownloadModel.TOTAL_VALUE_IN_CHUNKED_RESOURCE;
 
 /**
  * The utils for FileDownloader.
@@ -839,7 +838,7 @@ public class FileDownloadUtils {
     }
 
     public static String defaultUserAgent() {
-        return formatString("FileDownloader/%s", BuildConfig.VERSION_NAME);
+        return formatString("FileDownloader/%s", "1.0");
     }
 
     private static boolean isAppOnForeground(Context context) {

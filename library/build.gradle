@@ -1,12 +1,15 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion COMPILE_SDK_VERSION as int
-    buildToolsVersion BUILD_TOOLS_VERSION as String
+    namespace 'com.liulishuo.filedownloader'
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
 
     defaultConfig {
         minSdkVersion 9
-        versionName VERSION_NAME as String
+        versionName "1.0"
+    }
+    buildFeatures {
+        aidl = true
     }
 }
 
@@ -39,4 +42,3 @@ dependencies {
     testImplementation "org.robolectric:robolectric:3.3.2"
 }
 
-apply from: rootProject.file('gradle/mvn-push.gradle')
